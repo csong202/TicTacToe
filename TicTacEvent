@@ -1,0 +1,68 @@
+//use the classes that will b required for the program
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+//create a class that responds to mouse & keyboard input by "listening"
+public class TicTacEvent implements ItemListener, ActionListener, Runnable 
+{
+    //associate the game board with the event
+    TicTac gui;
+    
+    Thread playing;
+    ImageIcon a = new ImageIcon("x.jpg");
+    ImageIcon b = new ImageIcon("o.jpg");
+    int clicks = 0;
+    int win = 0;
+    int[][] check = new int[3][3];
+
+	//associate the 2 files to b used together
+    public TicTacEvent (TicTac in)
+    {
+        
+        gui = in;
+        
+        //initiates winner chech array
+        for (int row=0; row<=2; row++)
+        {
+           for (int col=0; col<=2; col++)
+           {
+               check[row][col]=0;
+           }
+       }
+    }
+    public void actionPerformed (ActionEvent event) {
+       String command = event.getActionCommand();
+
+       if (command.equals("Play")) {
+           startPlaying();
+       }
+       if (command.equals("1")) {
+           b1();
+       }
+       if (command.equals("2")) {
+           b2();
+       }
+       if (command.equals("3")) {
+           b3();
+       }
+       if (command.equals("4")) {
+           b4();
+       }
+       if (command.equals("5")) {
+           b5();
+       }
+       if (command.equals("6")) {
+           b6();
+       }
+       if (command.equals("7")) {
+           b7();
+       }
+       if (command.equals("8")) {
+           b8();
+       }
+       if (command.equals("9")) {
+           b9();
+       }
+    }
+}
